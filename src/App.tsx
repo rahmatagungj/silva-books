@@ -1,17 +1,16 @@
 import React from "react";
-import Header from "./components/Header";
-import Testimonials from "./components/Testimonials";
-import Hero from "./components/Hero";
-import Feature from "./components/Feature";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Order from "./pages/Order";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <Feature />
-      <Testimonials />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/order" component={Order} />
+      </Switch>
+    </Router>
   );
 }
 
